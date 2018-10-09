@@ -1,5 +1,5 @@
 production:
-  ffmpeg_path: '/usr/local/bin/ffmpeg'
+  ffmpeg_path: '/app/vendor/ffmpeg/ffmpeg'
 
 development:
   ffmpeg_path: '/usr/local/bin/ffmpeg'
