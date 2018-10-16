@@ -111,7 +111,7 @@ module Api::V1
           audio.update_columns(filename: params[:flowFilename])
         end
 
-        AudioProcessing.perform_later(
+        AudioProcessing.perform_now(
             { identifier: params[:flowIdentifier],
               filename: params[:flowFilename],
               title: params[:title],
