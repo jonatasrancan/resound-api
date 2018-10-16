@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :audios,
            foreign_key: 'uploader_id'
 
-  validates :nickname, presence: true
+  # validates :nickname, presence: true
   validates :uid, uniqueness: true
 
   self.primary_key = 'uid'
