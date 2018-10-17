@@ -111,11 +111,12 @@ module Api::V1
           audio.update_columns(filename: params[:flowFilename])
         end
 
-        AudioProcessing.perform_later(
+        AudioProcessing.perform_now(
             { identifier: params[:flowIdentifier],
               filename: params[:flowFilename],
               title: params[:title],
-              contributors: contributors }
+              contributors: contributors,
+              tenant: Apartment::Tenant.current }
         )
       else
         #   TBD: Upload by skipping flow.js, should we expect form data?

@@ -1,7 +1,18 @@
 # Resound API [![CircleCI](https://circleci.com/gh/ProjectResound/resound-api.svg?style=svg)](https://circleci.com/gh/ProjectResound/resound-api)
-
 The backend that all of Resound's apps hook into. More info about the suite of apps [in the wiki](https://github.com/ProjectResound/planning/wiki)
 
+## IMPORTANT NOTE!!
+This is not a working branch. It's one example of how multi-tenancy would work using the [apartment gem](https://github.com/influitive/apartment).
+
+Multi-tenancy would be handled on the API side (this repo).  Each group or station would be a separate tenant. For example, `kpcc` and `npr`.
+
+To create the tenants, first you need to set the env variable `ALLOWED_CORS_URLS`.
+Example: `ALLOWED_CORS_URLS=http://kpcc.resound.npr.org,http://why.resound.npr.org`
+
+Then you can run the following rake task, that will create the tenants based on the urls
+```
+rake db:create_tenants
+```
 
 ## Getting Started
 These instructions will get you a copy of the latest docker image and run the image
