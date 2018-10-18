@@ -16,7 +16,7 @@ describe Api::V1::UsersController do
           post USERS_API_ENDPOINT, params: { idToken: 'idtoken' }.to_json
         }.to change{ User.count }.by(1)
 
-        expect(response.status).to eq 200
+        expect(response.status).to eq 201
         expect(User.last.nickname).to eq nickname
       end
     end
