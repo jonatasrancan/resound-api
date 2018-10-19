@@ -26,7 +26,7 @@ class Transcoder
     case format
       when HE_AAC
         encoding_options.merge!({
-                                  audio_codec: 'libfdk_aac',
+                                  audio_codec: 'aac',
                                   audio_bitrate: '48'
                                 })
       when MP3_128
